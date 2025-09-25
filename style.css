@@ -1,0 +1,259 @@
+@font-face {
+    font-family: "CocoBiker";
+    src: url("data/CocoBiker Regular Trial.ttf") format("truetype");
+}
+@font-face {
+    font-family: "AncaCoder";
+    src: url("data/AnkaCoder-b.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: AncaCoder;
+}
+ 
+
+
+body {
+  margin: 0;
+  /* Degradado vertical fijo */
+  background: linear-gradient(to bottom, #ffffff, #A6CBCC); 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+}
+
+
+
+/* Pantallas */
+
+
+.pantalla {
+  display: none;
+  width: 100%;
+  height: 100vh;
+}
+
+/* --- Pantalla 1 --- */
+#pantalla1 {
+  font-size: 2rem;
+  font-family: CocoBiker;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0c2f48;
+  background-image: url("data/fondomar.jpg");
+      background-image:
+    linear-gradient(to right, #2BBFC5 1px, transparent 1px),
+    linear-gradient(to bottom, #2BBFC5 1px, transparent 1px);
+  background-size: 10vh 10vh;
+}
+
+.login-box {
+  padding: 15rem;
+  border-radius: 10px;
+  text-align: center;
+  
+}
+
+input {
+  font-family: AncaCoder;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  font-family: AncaCoder;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #2bbfc5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Pantalla 2 */
+
+#pantalla2 {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;  
+  overflow-y: auto;    
+    background-image:
+    linear-gradient(to right, #2BBFC5 1px, transparent 1px),
+    linear-gradient(to bottom, #2BBFC5 1px, transparent 1px);
+  background-size: 20vh 20vh;
+}
+
+/* Portada */
+.portada {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: inset(0 0 0 0); /* recorta el 30% inferior de la imagen */
+}
+
+#fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+/* Luna */
+#luna {
+  width: 40vw;
+  height: auto;
+  position: absolute;
+  bottom: 10%;
+  top:8vh;
+
+
+  transition: left 1s linear; /* suaviza */
+    transform: translateX(-50%) rotate(0deg);
+  z-index: 5;
+  animation: girarLuna 10s linear infinite; /* Animación */
+}
+
+
+/* Oscurecer */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: opacity 1s linear;
+  z-index: 3;
+}
+
+/* Contador */
+#contador {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: AncaCoder;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  z-index: 4;
+}
+/* Contenido encima de la portada */
+.contenido {
+  position: relative; /* mantiene posiciones absolutas internas */
+  width: 100%;
+  min-height: 200vh; /* mantiene scroll vertical para contenido largo */
+  
+}
+
+.item {
+  position: absolute; /* mantiene tus posiciones originales */
+}
+
+
+/* --- Textos individuales con unidades relativas --- */
+.text1  { top: 15vh;  left: 28vw; font-size: 1.6rem; width: 50vw; }
+.text2  { top: 25vh; left: 31vw; font-size: 1.6rem; width: 45vw; }
+.text3  { top: 35vh; left: 28vw; font-size: 1.6rem; width: 50vw; }
+.text4  { top: 45vh; left: 31vw; font-size: 1.6rem; width: 50vw; }
+
+.text5  { top: 120vh; left: 10vw; font-size: 1.6rem; width: 60vw; }
+.text6  { top: 130vh; left: 15vw; font-size: 1.6rem; width: 65vw; }
+.text7  { top: 140vh; left: 10vw; font-size: 1.6rem; width: 60vw; }
+
+.text8  { top: 175vh; left: 65vw; font-size: 1.6rem; width: 20vw; }
+.text9  { top: 200vh; left: 68vw; font-size: 1.6rem; width: 20vw; }
+.text10 { top: 235vh; left: 65vw; font-size: 1.6rem; width: 20vw; }
+
+.text11 { top: 280vh; left: 10vw; font-size: 1.6rem; width: 70vw; }
+.text12 { top: 288vh; left: 15vw; font-size: 1.6rem; width: 75vw; }
+.text13 { top: 300vh; left: 10vw; font-size: 1.6rem; width: 70vw; }
+
+.text14 { top: 350vh; left: 12vw; font-size: 1.6rem; width: 20vw; }
+.text15 { top: 365vh; left: 15vw; font-size: 1.6rem; width: 20vw; }
+.text16 { top: 380vh; left: 12vw; font-size: 1.6rem; width: 20vw; }
+.text17 { top: 395vh; left: 15vw; font-size: 1.6rem; width: 20vw; }
+.text18 { top: 410vh; left: 12vw; font-size: 1.6rem; width: 25vw; }
+
+.text19 { top: 454vh; left: 30vw; font-size: 1.6rem; width: 60vw; }
+
+
+
+/* --- Imágenes individuales con unidades relativas --- */
+.img1  { top: -25vh;   left: 0vw;    width: 10vw; }
+.img2  { top: -5vh;   left: 87vw;   width: 15vw; }
+.img3  { top: 55vh;   left: 15vw;   width: 40vw; }
+.img4  { top: 100vh;   left: 80vw;   width: 20vw; }
+.img5  { top: 160vh;  left: 0vw;    width: 60vw;}
+.img6  { top: 255vh;  left: 25vw;    width: 90vw; }
+.img7  { top: 297vh;  left: -3vw;   width: 25vw; }
+.img8  { top: 330vh;  left: 87vw;   width: 12vw; }
+.img13 { top: 357vh;  left: 30vw;   width: 30vw; width: 60%; height: auto;}
+.img9  { top: 460vh;  left: -0vw;   width: 50vw; transform: rotate(-0deg); }
+.img10 { top: 455vh;  left: 1vw;   width: 50vw;transform: rotate(-90deg);clip-path: inset(0 40% 0 0); }
+.img11 { top: 455vh;  left: 50vw;   width: 50vw; transform: rotate(-90deg); clip-path: inset(0 20% 0 0); }
+.img12 { top: 490vh;  left: 60vw;   width: 50vw;transform: rotate(180deg);  }
+.img14 { top: 470vh;  left: 20vw;   width: 60vw; }
+
+
+.imagen img {
+  width: 100%;
+  height: auto;
+}
+
+/* --- Textos generales --- */
+.texto {
+  color: #0C2F48;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: AncaCoder;
+}
+
+/* --- Media Queries para pantallas más chicas (desktop) --- */
+@media (max-width: 1440px) {
+  .text1, .text2, .text3, .text4,
+  .text5, .text6, .text7,
+  .text8, .text9, .text10,
+  .text11, .text12, .text13,
+  .text14, .text15, .text16, .text17, .text18 {
+    left: 5vw;
+    width: 90vw;
+    font-size: 1.5rem;
+  }
+
+  .img1, .img2, .img3, .img4, .img5, .img6,
+  .img7, .img8, .img9, .img10, .img11, .img12 {
+    width: 20vw;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 2vh auto;
+  }
+}
